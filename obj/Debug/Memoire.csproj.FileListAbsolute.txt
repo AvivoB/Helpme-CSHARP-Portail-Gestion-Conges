@@ -1,0 +1,16 @@
+/Users/okacha/Projects/Memoire/Memoire/bin/Memoire.dll
+/Users/okacha/Projects/Memoire/Memoire/bin/Memoire.pdb
+/Users/okacha/Projects/Memoire/Memoire/obj/Debug/Memoire.csproj.CoreCompileInputs.cache
+/Users/okacha/Projects/Memoire/Memoire/obj/Debug/Memoire.dll
+/Users/okacha/Projects/Memoire/Memoire/obj/Debug/Memoire.pdb
+/Users/okacha/Projects/Memoire/Memoire/bin/MySql.Data.dll
+/Users/okacha/Projects/Memoire/Memoire/obj/Debug/Memoire.csprojAssemblyReference.cache
+/Users/okacha/Projects/Memoire/Memoire/obj/Debug/Memoire.csproj.CopyComplete
+C:\Laragon\www\Projet-C#\obj\Debug\Memoire.dll
+C:\Laragon\www\Projet-C#\obj\Debug\Memoire.pdb
+C:\Laragon\www\Projet-C#\bin\Memoire.dll.config
+C:\Laragon\www\Projet-C#\bin\Memoire.dll
+C:\Laragon\www\Projet-C#\bin\Memoire.pdb
+C:\Laragon\www\Projet-C#\obj\Debug\Memoire.csproj.AssemblyReference.cache
+C:\Laragon\www\Projet-C#\obj\Debug\Memoire.csproj.CoreCompileInputs.cache
+C:\Laragon\www\Projet-C#\obj\Debug\Memoire.csproj.CopyComplete
