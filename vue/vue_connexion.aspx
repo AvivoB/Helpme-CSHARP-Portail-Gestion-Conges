@@ -135,7 +135,7 @@
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Employee's</h4>
+              <h4 class="mb-2">Tim'anager</h4>
               <p class="mb-4">Connectez vous a votre compte</p>
 
               <%= message %>
