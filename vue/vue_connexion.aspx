@@ -1,3 +1,25 @@
+<%@ Page Language="C#" %>
+<%@ Import Namespace="Memoire" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+
+<%
+    string message = "";
+    Session.Contents.RemoveAll();
+    if (Request.Form["connecter"] != null) {
+        Controleur unControleur = new Controleur();
+        String email = Request.Form["email"];
+        String mdp = Request.Form["mdp"];
+        var conn = unControleur.connexion(email, mdp);
+        if (conn.Count > 0) {
+            var id = conn[0];
+            Session.Add("Id", id);
+            //Response.Redirect("./Default.aspx");
+        } else {
+            message = "<div class=\"alert alert-danger\" role=\"alert\">Identifiants incorrects</div>";
+        }
+    }
+%>
+
 <!DOCTYPE html>
 
 <!-- =========================================================
@@ -147,7 +169,7 @@
                     type="text"
                     class="form-control"
                     id="email"
-                    name="email-username"
+                    name="email"
                     placeholder="Entrez votre adresse e-mail"
                     autofocus
                   />

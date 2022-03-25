@@ -12,21 +12,22 @@
             if (Session["email"] == null){
             %>
             <%
-            if (Request.Form["connecter"] != null) {
-                string email = Request.Form["email"];
-                string mdp = Request.Form["mdp"];
-                User unUser = new User(email, mdp, "", "", "");
-                unUser = unControleur.selectWhereUser(unUser);
-                
+                string message = "";
+                if (Request.Form["connecter"] != null) {
+                    string email = Request.Form["email"];
+                    string mdp = Request.Form["mdp"];
+                    User unUser = new User(email, mdp, "", "", "");
+                    unUser = unControleur.selectWhereUser(unUser);
+
                     if (unUser != null) {
                         message = "Connexion Bienvenue : " + unUser.Nom;
                         Session.Add("email", unUser.Email);
                         Session.Add("droits", unUser.Droits);
-                    
+
                     } else {
                         message = "<div class=\"alert alert-danger\" role=\"alert\">Identifiants inccorects</div>";
+                    }
                 }
-            }
             %>
             
             <!--#include file="vue/vue_connexion.aspx"-->
@@ -38,23 +39,24 @@
             
             
             <%
-            if (Session["email"] != null) {
-            
-            Document leDocument = null; 
-            
-            if(Request["action"] != null){
-                string action = Request["action"]; 
-                int idmemoire = int.Parse (Request["idmemoire"]); 
-                 
-                if (action == "sup"){
-                    unControleur.deleteMemoire (idmemoire);
-                } else if (action == "edit"){
-                    
-                    //récupérer le document sélectionné pour être modifié 
-                    leDocument = unControleur.selectWhereDocument(idmemoire); 
-            
+                if (Session["email"] != null) {
+
+                    Document leDocument = null;
+
+                    if (Request["action"] != null) {
+                        string action = Request["action"];
+                        int idmemoire = int.Parse(Request["idmemoire"]);
+
+                        if (action == "sup") {
+                            unControleur.deleteMemoire(idmemoire);
+                        } else if (action == "edit") {
+
+                            //récupérer le document sélectionné pour être modifié 
+                            leDocument = unControleur.selectWhereDocument(idmemoire);
+
+                        }
+                    }
                 }
-            }
             %>
             <!--#include file="vue/vue_insert.aspx"-->
             

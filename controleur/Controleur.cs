@@ -8,7 +8,7 @@ namespace Memoire
         private Modele unModele ; 
         public Controleur()
         {
-            this.unModele = new Modele("127.0.0.1", "memoireIris", "root", "root"); 
+            this.unModele = new Modele("localhost", "dev3", "root", ""); 
         }
 
         public List<Document> selectAllMemoires ()
@@ -21,6 +21,11 @@ namespace Memoire
 
             //appel du Modele
             unModele.insertMemoire(unDocument);
+        }
+
+        public List<string> connexion(string email, string mdp)
+        {
+            return unModele.connexion(email, mdp);
         }
 
         public void deleteMemoire(int idmemoire)

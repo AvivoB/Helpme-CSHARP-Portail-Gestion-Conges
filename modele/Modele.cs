@@ -1,6 +1,7 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
 using System.Data.Common;
+using System.Diagnostics;
 using System.Collections.Generic; 
 
 namespace Memoire
@@ -10,28 +11,60 @@ namespace Memoire
         private string serveur, bdd, user, mdp;
         //connexion MySQL 
         private MySqlConnection maConnexion;
+        private MySqlCommand cmd;
 
         public Modele(string serveur, string bdd, string user, string mdp)
         {
+            Debug.WriteLine("Hello World!");
             this.serveur = serveur;
             this.bdd = bdd;
             this.user = user;
             this.mdp = mdp;
             //3306 Mysql et 3307 Mariadb
-            string url = "SERVER="+this.serveur+";Port=8889"+";Database="
-                + this.bdd+ ";User Id="+this.user+";password="+this.mdp;
-
+            string url = "server="+this.serveur+";"+"database="
+                + this.bdd+ ";user="+this.user+";password="+this.mdp;
             //instanciation de la connexion
             try
             {
                 this.maConnexion = new MySqlConnection(url);
-                Console.WriteLine("Connexion reussie");
+                this.maConnexion.Open();
+                Debug.WriteLine("Connexion reussie");
             }
-            catch(Exception exp)
+            catch (Exception exp)
             {
-                Console.WriteLine("Erreur de connexion à : " + url);
+                Debug.WriteLine("Erreur de connexion à : " + url);
             }
 
+        }
+
+        public List<string> connexion(string email, string mdp)
+        {
+            List<string> list = new List<string>();
+            try
+            {
+                string str = "select * from prestataire where prestataire_mail = '"+email+"' and prestataire_mdp = '"+mdp+"';";
+                Debug.WriteLine(str);
+                this.cmd = new MySqlCommand(str, this.maConnexion);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            list.Add(reader["id"].ToString());
+                        }
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Vide");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            return list;
         }
 
         public List<Document> selectAllMemoires()

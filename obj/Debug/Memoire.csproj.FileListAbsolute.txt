@@ -14,3 +14,11 @@ C:\Laragon\www\Projet-C#\bin\Memoire.pdb
 C:\Laragon\www\Projet-C#\obj\Debug\Memoire.csproj.AssemblyReference.cache
 C:\Laragon\www\Projet-C#\obj\Debug\Memoire.csproj.CoreCompileInputs.cache
 C:\Laragon\www\Projet-C#\obj\Debug\Memoire.csproj.CopyComplete
+C:\Users\YaSamy\source\repos\Projet-C----Gestion-cong-s\bin\Memoire.dll.config
+C:\Users\YaSamy\source\repos\Projet-C----Gestion-cong-s\bin\Memoire.dll
+C:\Users\YaSamy\source\repos\Projet-C----Gestion-cong-s\bin\Memoire.pdb
+C:\Users\YaSamy\source\repos\Projet-C----Gestion-cong-s\obj\Debug\Memoire.csproj.AssemblyReference.cache
+C:\Users\YaSamy\source\repos\Projet-C----Gestion-cong-s\obj\Debug\Memoire.csproj.CoreCompileInputs.cache
+C:\Users\YaSamy\source\repos\Projet-C----Gestion-cong-s\obj\Debug\Memoire.csproj.CopyComplete
+C:\Users\YaSamy\source\repos\Projet-C----Gestion-cong-s\obj\Debug\Memoire.dll
+C:\Users\YaSamy\source\repos\Projet-C----Gestion-cong-s\obj\Debug\Memoire.pdb

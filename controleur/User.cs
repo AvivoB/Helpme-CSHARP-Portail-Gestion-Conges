@@ -28,7 +28,8 @@ namespace Memoire
             this.prenom = prenom;
             this.droits = droits;
 
-        }
+        }        
+        
 
         public int Iduser
         {

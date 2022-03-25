@@ -1,4 +1,5 @@
-﻿<form method="post" action="" >
+﻿<%
+<form method="post" action="" >
     <table>
         <tr>
             <td>Intitule</td>
