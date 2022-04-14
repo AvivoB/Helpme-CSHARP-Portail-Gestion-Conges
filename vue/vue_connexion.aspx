@@ -4,7 +4,7 @@
 
 <%
     string message = "";
-    Session.Contents.RemoveAll();
+    Response.Cookies["id"].Expires = DateTime.Now.AddDays(-1); 
     if (Request.Form["connecter"] != null) {
         Controleur unControleur = new Controleur();
         String email = Request.Form["email"];
@@ -12,8 +12,14 @@
         var conn = unControleur.connexion(email, mdp);
         if (conn.Count > 0) {
             var id = conn[0];
-            Session.Add("Id", id);
-            //Response.Redirect("./Default.aspx");
+            DateTime now = DateTime.Now;
+
+            HttpCookie cookie = new HttpCookie("id");
+            cookie.Value = id;
+            cookie.Expires = now.AddHours(2);
+
+            Response.Cookies.Add(cookie);
+            Response.Redirect("./vue_employe.aspx");
         } else {
             message = "<div class=\"alert alert-danger\" role=\"alert\">Identifiants incorrects</div>";
         }

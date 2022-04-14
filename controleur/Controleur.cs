@@ -28,6 +28,21 @@ namespace Memoire
             return unModele.connexion(email, mdp);
         }
 
+        public List<User> selectAllUsers()
+        {
+            return unModele.selectAllUsers();
+        }
+
+        public List<Conge> selectAllConges()
+        {
+            return unModele.selectAllConges();
+        }
+
+        public User selectWhereUser(string id)
+        {
+            return unModele.selectWhereUser(id);
+        }
+
         public void deleteMemoire(int idmemoire)
         {
             unModele.deleteMemoire(idmemoire);
@@ -37,14 +52,24 @@ namespace Memoire
             unModele.updateMemoire(unDocument);
         }
 
+        public void insertConge(string date_debut, string date_fin, string id)
+        {
+            unModele.insertConge(date_debut, date_fin, id);
+        }
+
+        public void updateConge(string id, string approuve)
+        {
+            unModele.updateConge(id, approuve);
+        }
+
+        public List<Conge> selectWhereConge(string id)
+        {
+            return unModele.selectWhereConge(id);
+        }
+
         public Document selectWhereDocument(int idmemoire)
         {
             return unModele.selectWhereDocument(idmemoire);
-        }
-
-        public User selectWhereUser(User unUser)
-        {
-            return unModele.selectWhereUser(unUser);
         }
     }
 }
